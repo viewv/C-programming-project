@@ -20,7 +20,7 @@ int main()
     char c;//防止gets函数读入不必要的东西
     printf("Please input the n\n");
     scanf("%d",&n);
-    printf("Please input the str\n");
+    printf("Please input the string\n");
     c=getchar();//隔离输入
     gets(allWorld);
     printf("\nThis is result\n\n");
