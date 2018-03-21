@@ -8,7 +8,6 @@
 **/
 
 #include<stdio.h>
-#include<string.h>
 
 void printword(int n);//打印函数
 int checkflag(int i, int temp);//检查函数
