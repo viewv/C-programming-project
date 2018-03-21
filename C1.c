@@ -37,6 +37,7 @@ int main()
     struct student *node = NULL;
     while (control == 1)
     {
+        //一个简单的用户界面
         printf("====================================\n");
         printf("|     Please Choose your option    |\n");
         printf("|    Input the number to choose    |\n");
