@@ -12,7 +12,7 @@
 
 void printword(int n);//打印函数
 int checkflag(int i, int temp);//检查函数
-int flag = 0;//设置全局变量flag检查是否需要换行
+int flag = 0;//设置全局变量flag检查是否需要换行1是换0是不换
 char allWorld[100000];//字符串存储区
 
 int main()
@@ -22,7 +22,7 @@ int main()
     printf("Please input the n\n");
     scanf("%d",&n);
     printf("Please input the str\n");
-    c=getchar();
+    c=getchar();//隔离输入
     gets(allWorld);
     printf("\nThis is result\n\n");
     printword(n);
@@ -47,13 +47,16 @@ void printword(int n)
         }
         else
         {
+            /*
+            按照题目要求打印空格
+            */
             for(j=counter;j<=counter;j++)
             {
                 printf(" ");
             }
             counter=0;
             flag=0;
-            printf("\n%c",allWorld[i]);
+            printf("\n%c",allWorld[i]);//要把下一行第一个字母打印出来
         }
     }
 }
