@@ -21,7 +21,7 @@ struct student
     struct student *next;
 };
 
-int n;
+int n;//链表节点个数统计，为了方便这里使用全局变量
 
 struct student *Create();
 void Printlinklist(struct student *head);
@@ -33,26 +33,26 @@ int main()
     int option;
     int temp;
     int control = 1;
-    struct student *head = NULL;
+    struct student *head = NULL;//链表头
     struct student *node = NULL;
-    while (control == 1)
+    while (control == 1) //通过while循环让这个程序能够循环执行
     {
         //一个简单的用户界面
-        printf("====================================\n");
-        printf("|     Please Choose your option    |\n");
-        printf("|    Input the number to choose    |\n");
-        printf("|     1:Creat a list of student    |\n");
-        printf("|   2:Show The Information of list |\n");
-        printf("|   3:Delete the student by number |\n");
-        printf("|   4:Insert a student information |\n");
-        printf("|         0:Exit    9:Run          |\n");
-        printf("====================================\n");
+        printf("========================================\n");
+        printf("|       Please Choose your option      |\n");
+        printf("|      Input the number to choose      |\n");
+        printf("|       1:Creat a list of student      |\n");
+        printf("|   2:Show all the student information |\n");
+        printf("|      3:Delete the student by number  |\n");
+        printf("|     4:Insert a student information   |\n");
+        printf("|          0:Exit     9:Run            |\n");
+        printf("========================================\n");
         scanf("%d", &option);
         if (option == 1)
         {
             printf("Input the student information\n");
             printf("Input 0 0 0 0 to stop\n");
-            head = Create();
+            head = Create();//创建链表
         }
 
         if (option == 2)
@@ -72,13 +72,13 @@ int main()
         {
             printf("Please input the student information\n");
             printf("\nStudent number name sex age\n");
-            node = (struct student *)malloc(LEN); //创建新节点，这个节点保存信息
+            node = (struct student *)malloc(LEN); //创建新节点，这个节点保存新建信息
             scanf("%d%s%s%d", &(node->num),
                   &(node->name),
                   &(node->sex),
                   &(node->age)); //录入数据
             printf("Please input the place you want to insert\n");
-            printf("(a student number befor you want)\n");
+            printf("(a student number befor you want to insert)\n");
             scanf("%d", &temp);
             Insert(head, temp, node);
         }
@@ -219,7 +219,7 @@ struct student *Del(struct student *head, int num)
 }
 
 /*  
-插入指定学号的后面 
+插入节点在指定学号的后面 
 */
 struct student *Insert(struct student *head, int num, struct student *node)
 {

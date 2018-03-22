@@ -11,14 +11,14 @@
 
 void linkfile();
 
-FILE *db1, *db2, *db3;//创建文件指针
+FILE *db1, *db2, *db3; //创建文件指针
 
 int main()
 {
     char c;
-    char db1str[100];//db1文件名
-    char db2str[100];//db2文件名
-    char db3str[100];//db3文件名
+    char db1str[100]; //db1文件名
+    char db2str[100]; //db2文件名
+    char db3str[100]; //db3文件名
 
     printf("Please enter the db1 filename\n");
     scanf("%s", db1str);
@@ -29,11 +29,11 @@ int main()
     printf("Please enter the db3 filename\n");
     scanf("%s", db3str);
 
-    db1 = fopen(db1str, "r");//打开文件
-    db2 = fopen(db2str, "r");//打开文件
-    db3 = fopen(db3str, "w");//打开文件
+    db1 = fopen(db1str, "r"); //打开文件
+    db2 = fopen(db2str, "r"); //打开文件
+    db3 = fopen(db3str, "w"); //打开文件
 
-    linkfile();//链接函数
+    linkfile(); //链接函数
 
     /*
     关闭所有文件
@@ -49,8 +49,8 @@ void linkfile()
 {
     int i, j;
 
-    float mathscore, englishscore;//数学成绩，英语成绩
-    float average;//平均数
+    float mathscore, englishscore; //数学成绩，英语成绩
+    float average;                 //平均数
 
     //按照一行一行的读
     char maxchardb1[1024];
@@ -67,7 +67,7 @@ void linkfile()
         fgets(maxchardb1, 1024, db1);
         fgets(maxchardb2, 1024, db2);
 
-        if((maxchardb1[0]=='\n') || (maxchardb1[0]=='\0'))
+        if ((maxchardb1[0] == '\n') || (maxchardb1[0] == '\0'))
         {
             break;
         }
@@ -78,32 +78,34 @@ void linkfile()
             name[j] = maxchardb1[i];
             j++;
         }
-        name[j + 1] = '\0', j = 0;//读姓名
+        name[j] = '\0';
+        j = 0; //读姓名
         for (i = i + 1; (maxchardb1[i] != '\n') && (maxchardb1[i] != '\0'); i++)
         {
             english[j] = maxchardb1[i];
             j++;
         }
-        english[j + 1] = '\0', j = 0;//读英语成绩
+        english[j] = '\0';
+        j = 0; //读英语成绩
         for (i = 0; maxchardb2[i] != ' '; i++)
         {
-            name[j] = maxchardb2[i];
-            j++;
+            ;
         }
-        name[j + 1] = '\0', j = 0;
+        j = 0;
         for (i = i + 1; (maxchardb2[i] != '\n') && (maxchardb2[i] != '\0'); i++)
         {
             math[j] = maxchardb2[i];
             j++;
         }
-        math[j + 1] = '\0', j = 0;//读数学成绩
+        math[j] = '\0';
+        j = 0; //读数学成绩
 
         //转换成数字
         mathscore = atof(math);
         englishscore = atof(english);
         average = ((float)mathscore + (float)englishscore) / 2.0;
 
-        gcvt(average, 10, averagestr);//转换成字符串
+        gcvt(average, 10, averagestr); //转换成字符串
 
         //注入信息到db3
         fputs("Name:", db3);
@@ -117,7 +119,6 @@ void linkfile()
 
         fputs("\tAverage:", db3);
         fputs(averagestr, db3);
-        fputc('\t', db3);
 
         fputc('\n', db3);
     }

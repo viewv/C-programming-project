@@ -1,3 +1,6 @@
 James 80
 mike 91
 lily 100
+lumia 89
+sily 78
+nike 82
