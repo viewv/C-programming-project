@@ -1,0 +1,3 @@
+Name:James	Math:89	English:80	Average:84.5	
+Name:mikes	Math:90	English:91	Average:90.5	
+Name:lilys	Math:90	English:100	Average:95.	
