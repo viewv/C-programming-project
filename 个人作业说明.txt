@@ -22,3 +22,9 @@ exe文件的名字对应题号
 本次作业已经托管在本人的github上：
 https://github.com/viewv/C-programming-project
 欢迎访问
+
+
+备注：
+    本次作业为独立完成。
+    如有引用代码建议来源声明。
+    所有代码托管在github上开源可获取。
